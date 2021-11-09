@@ -1,12 +1,9 @@
 package com.example.demo.book;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,7 +23,14 @@ public class BookController {
     }
 
     @PostMapping
-    public void addRating(int rating){
-//        todo make add rating function
+    public ResponseEntity<HttpStatus> addBook(@RequestBody Book book){
+        service.addBook(book);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @PostMapping(path = "/{id}/rate")
+    public ResponseEntity<HttpStatus> addRating(@PathVariable String id, int rating) {
+        service.addRating(id, rating);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

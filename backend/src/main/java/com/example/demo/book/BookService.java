@@ -27,4 +27,8 @@ public class BookService {
     public List<Book> getBooksByAuthor(String author){
         return repository.findBooksByAuthorsContaining(author);
     }
+
+    public void addRating(String id, int rating){
+        // todo
+    }
 }

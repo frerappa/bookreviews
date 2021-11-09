@@ -16,4 +16,44 @@ public class Book {
     private List<String> genres;
     private Integer numberOfPages;
     private String collection;
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public List<String> getAuthors() {
+        return authors;
+    }
+
+    public Float getAverageRating() {
+        return averageRating;
+    }
+
+    public List<BookReview> getReviews() {
+        return reviews;
+    }
+
+    public Long getNumberOfReviews() {
+        return numberOfReviews;
+    }
+
+    public List<String> getGenres() {
+        return genres;
+    }
+
+    public Integer getNumberOfPages() {
+        return numberOfPages;
+    }
+
+    public String getCollection() {
+        return collection;
+    }
 }
